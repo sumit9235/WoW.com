@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body{
+            background-color: floralwhite;
+        }
+        *{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h2,h1{
+            text-align: center;
+            display: block;
+            background-color: aquamarine;
+        }
+        input{
+            display: block;
+            margin: auto;
+        }
+        #Signup{
+            width: 300px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+            background-color: lightblue;
+            border-radius: 5px ;
+        }
+        #wow{
+            color: purple;
+        }
+        #Submit{
+            display: block;
+            margin: auto;
+            padding: 5px;
+        }
+        #Submit:hover{
+            color: red;
+            background-color: darkkhaki;
+        }
+        button{
+            text-align: left;
+        }
+        #admin{
+            color: darkcyan;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to <span id="wow">WOW</span>.com</h1>
+    <h2>Just wow</h2>
+    <span id="admin" style="text-align: left;">Click <a href="#">here</a> for admin login</span>
+    <br>
+    <br>
+    <div id="Signup">
+        <h1>Please Signup First</h1>
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Enter your name" id="name">
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="Enter the email" id="email">
+        <label for="pass">Password</label>
+        <input type="text" name="pass" placeholder="Enter the password" id="pass">
+        <label for="city">City</label>
+        <input type="text" name="city" placeholder="Enter your city" id="city">
+        <label for="city">Gender</label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <button id="Submit" onclick="Signup()">Signup</button>
+    </div>
+</body>
+</html>
+<script>
+    const Signup=()=>{
+        const payload={
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            password:document.getElementById("pass").value,
+            city:document.getElementById("city").value,
+            gender:document.getElementById("gender").value
+        }
+        console.log(payload)
+        localStorage.removeItem("token")
+        fetch("http://localhost:4500/users/register",{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(payload)
+        }).then(res=>res.json())
+        .then(data=>console.log(data))
+        .catch(err=>console.log(err))
+    }
+</script>

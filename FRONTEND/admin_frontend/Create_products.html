@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload products</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: teal;
+        }
+
+        #main_div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            text-align: center;
+        }
+
+        #uploader {
+            width: 250px;
+            height: auto;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+        }
+        #info_2{
+            color: red;
+        }
+
+        #patcher {
+            width: 250px;
+            height: auto;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+        }
+
+        #lable {
+            color: brown;
+        }
+        #lable_2{
+            color: brown;
+        }
+
+        #info {
+            color: red;
+        }
+
+        #form {
+            display: block;
+        }
+        #display{
+            width: 95%;
+            padding: 20px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        #display>div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            text-align: center;
+            height: 600px;
+        }
+        #display>div>img{
+            width:80%;
+            height: 50%;
+        }
+        #display>div>button{
+            color: goldenrod;
+        }
+        #display>div>button:hover{
+            color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <button><a href="#">Logout</a></button>
+    </nav>
+    <h1>Upload products data here</h1>
+    <div id="main_div">
+        <div id="uploader">
+            <h2>Creating products</h2>
+            <p id="info">Write correct input</p>
+            <input type="text" id="P_name" required placeholder="Product name">
+            <input type="text" id="P_image" required placeholder="Image_url">
+            <input type="number" id="P_price" required placeholder="Enter price">
+            <form id="form">
+                <label for="category" id="lable">Choose a category:</label>
+                <select name="category" id="category">
+                    <option value="gen">General</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="shirts">Shirts</option>
+                    <option value="jeans">Jeans</option>
+                </select>
+                <br><br>
+            </form>
+            <button id="submit-btn">Submit</button>
+        </div>
+        <div id="patcher">
+            <h2>Updating products</h2>
+            <p id="info_2">Write correct input</p>
+            <input type="text" id="Patch_id" required placeholder="Product id">
+            <input type="text" name="data" id="data" placeholder="Enter details to update">
+            <form id="form">
+                <label for="category" id="lable_2">Choose a category:</label>
+                <select name="category" id="category_p">
+                    <option value="name">Name</option>
+                    <option value="image">Image</option>
+                    <option value="price">Price</option>
+                </select>
+                <br><br>
+            </form>
+            <button id="update-btn">Update</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Available products</h1>
+    <br>
+    <br>
+    <div id="display">
+
+    </div>
+</body>
+
+</html>
+<script>
+    let payload = {}
+    const submitBtn = document.querySelector('#submit-btn');
+    submitBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const name = document.querySelector('#P_name').value;
+        const image = document.querySelector('#P_image').value;
+        const price = document.querySelector('#P_price').value;
+        const category = document.querySelector('#category').value;
+        if (name && image && price && category) {
+            payload.name = name;
+            payload.image = image;
+            payload.price = price;
+            payload.category = category;
+            fetch("http://localhost:4500/products/create", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    document.querySelector("#info").textContent = data.msg
+                    window.location.reload()
+                })
+                .catch(err => console.log(err))
+        } else {
+            console.log('Please fill out all fields.');
+            document.querySelector("#info").textContent = "Please fill all fields with correct data"
+        }
+    });
+</script>
+<script>
+   
+    let body={}
+    const updateBtn = document.querySelector('#update-btn');
+    updateBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+    const productId = document.getElementById("Patch_id").value;
+    const data=document.getElementById("data").value;
+    const category=document.getElementById("category_p").value;
+    const url = `http://localhost:4500/products/patch/${productId}`;
+    if(productId && data && category){
+       body[category]= data
+         fetch(url, {
+        method: "PATCH",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(response => response.json())
+        .then(data =>{
+            console.log(data)
+            document.querySelector("#info_2").textContent = data.msg
+            window.location.reload()
+        })
+        .catch(error => console.error(error));
+    }else{
+        document.querySelector("#info_2").textContent = "Please fill all fields with correct data"
+    }
+    console.log(body)
+});
+  
+</script>
+<script>
+    let  container=document.querySelector("#display")
+    let bag=[]
+    const getData=()=>{
+        fetch("http://localhost:4500/products/",{
+            method:"GET"
+        }).then(res=>res.json())
+        .then(data=>{
+            bag=[...data]
+            console.log(bag)
+            displayData(bag)
+        })
+        .catch(err=>console.log(err))
+    }
+    getData()
+
+    function displayData(data){
+        container.innerHTML=null
+        data.forEach(function(elem,id){
+            let div=document.createElement("div")
+            let sr_number=document.createElement("p")
+            sr_number.textContent=`Product id: ${elem._id}`
+            let name=document.createElement("h2")
+            name.textContent=elem.name
+            let image=document.createElement("img")
+            image.setAttribute("src",elem.image)
+            let price=document.createElement("p")
+            price.textContent=`₹ ${elem.price}`
+            let category=document.createElement("p")
+            category.textContent=elem.category
+            let del=document.createElement("button")
+            del.textContent="Delete"
+            del.addEventListener("click",function(){
+                deletedata(elem._id)
+            })
+            div.append(image,sr_number,name,category,price,del)
+            container.append(div)
+        })
+    }
+    function deletedata(id){
+        fetch(`http://localhost:4500/products/delete/${id}`,{
+            method:"DELETE"
+        }).then(res=>res.json())
+        .then(data=>{
+            getData()
+        }).catch(err=>console.log(err))
+    }
+</script>
