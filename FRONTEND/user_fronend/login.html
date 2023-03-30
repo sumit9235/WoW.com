@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        body {
+            background-image: url("./gradient3.jpg");
+        }
+
+        #login {
+            width: 350px;
+            text-align: center;
+            margin: auto;
+            margin-top: 2%;
+            border-radius: 5px;
+            font-family: cursive;
+        }
+
+        input {
+            display: block;
+            text-align: center;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        #head {
+            font-size: 50px;
+            text-align: center;
+            color: honeydew;
+            margin-top: 10%;
+        }
+
+        #logo {
+            color: magenta;
+        }
+
+        #info {
+            color: rgb(188, 245, 188);
+        }
+
+        label {
+            color: honeydew;
+        }
+
+        #submit {
+            width: 50px;
+        }
+
+        #submit:hover {
+            color: red;
+            background-color: thistle;
+        }
+
+        #signup {
+            text-align: center;
+            color: aliceblue;
+        }
+
+        #signup>span>a {
+            color: rgb(234, 236, 96);
+        }
+
+        #home {
+            color: azure;
+        }
+
+        #home>a {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 id="home">Click here to go back to <a href="./homepage.html">Home Page</a></h4>
+    <h1 id="head">Welocome to <span id="logo">WoW!</span>.com</h1>
+    <div id="login">
+        <h2 id="info">Please fill the correct credentials</h2>
+        <form id="form">
+            <label for="email">Email <span>&#128231;</span></label>
+            <input type="email" placeholder="Enter the registered email" id="email" name="email">
+            <br>
+            <label for="pass">Password <span> &#128273;</span></label>
+            <br>
+            <input type="password" placeholder="Enter the password" id="pass" name="pass">
+            <br>
+            <input type="submit" value="Login" id="submit">
+        </form>
+    </div>
+    <h2 id="signup">Not a user? <span><a href="../signup.html">Signup</a> now</span></h2>
+</body>
+
+</html>
+<script>
+    let form = document.querySelector("#form")
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const payload = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("pass").value
+        }
+        if (payload.email && payload.password) {
+            fetch(" http://localhost:4500/users/login", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then(res => res.json())
+                .then((res) => {
+                    console.log(res)
+                    document.getElementById("info").textContent = res.msg
+                    localStorage.setItem("user",res.user)
+                    localStorage.setItem("token", res.token)
+                    document.getElementById("form").reset()
+                    setTimeout(() => {
+                        window.location.href="../user_fronend/homepage.html"
+                    }, 1500);
+                })
+                .catch(err => console.log(err))
+        }
+        else{
+            document.getElementById("info").textContent = "Incorrect credentials"
+        }
+
+    })
+</script>

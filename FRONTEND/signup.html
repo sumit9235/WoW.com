@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <style>
-        body{
+        body {
             background-color: floralwhite;
+            background-image: url("./gradient2.jpg");
+            background-repeat: space;
         }
-        *{
+
+        * {
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-        h2,h1{
+
+        h2,
+        h1 {
             text-align: center;
             display: block;
-            background-color: aquamarine;
+            background-color: #A5C9CA;
         }
-        input{
+
+        input {
             display: block;
             margin: auto;
         }
-        #Signup{
+
+        #Signup {
             width: 300px;
             margin: auto;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
             background-color: lightblue;
-            border-radius: 5px ;
+            border-radius: 5px;
         }
-        #wow{
-            color: purple;
+
+        #wow {
+            color: red;
         }
-        #Submit{
+
+        #Submit {
             display: block;
             margin: auto;
             padding: 5px;
         }
-        #Submit:hover{
+
+        #Submit:hover {
             color: red;
             background-color: darkkhaki;
         }
-        button{
+
+        button {
             text-align: left;
         }
-        #admin{
-            color: darkcyan;
+
+        #admin {
+            color: black;
+            font-size: large;
         }
 
+        #here {
+            color: red;
+        }
     </style>
 </head>
+
 <body>
-    <h1>Welcome to <span id="wow">WOW</span>.com</h1>
-    <h2>Just wow</h2>
-    <span id="admin" style="text-align: left;">Click <a href="#">here</a> for admin login</span>
+    <h1>Welcome to <span id="wow">WOW!</span>.com</h1>
+    <h2 id="info">Just wow</h2>
+    <span id="admin" style="text-align: left;"><u>Click <a href="./admin_frontend/admin.login.html" id="here">here</a>
+            for admin login</u></span>
+    <br>
     <br>
     <br>
     <div id="Signup">
@@ -73,27 +93,46 @@
         </select>
         <button id="Submit" onclick="Signup()">Signup</button>
     </div>
+    <br>
+    <br>
+    <br>
+    <span id="admin" style="text-align: left;"><u>Already a user? Click <a href="./user_fronend/login.html" id="here">here</a></u></span>
 </body>
+
 </html>
 <script>
-    const Signup=()=>{
-        const payload={
-            name:document.getElementById("name").value,
-            email:document.getElementById("email").value,
-            password:document.getElementById("pass").value,
-            city:document.getElementById("city").value,
-            gender:document.getElementById("gender").value
+    let info = document.getElementById("info")
+    const Signup = () => {
+        const payload = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("pass").value,
+            city: document.getElementById("city").value,
+            gender: document.getElementById("gender").value
         }
-        console.log(payload)
-        localStorage.removeItem("token")
-        fetch("http://localhost:4500/users/register",{
-            method:"POST",
-            headers:{
-                "content-type":"application/json"
-            },
-            body:JSON.stringify(payload)
-        }).then(res=>res.json())
-        .then(data=>console.log(data))
-        .catch(err=>console.log(err))
+        if (payload.name && payload.email && payload.password && payload.city && payload.gender) {
+            console.log(payload)
+            localStorage.removeItem("token")
+            localStorage.removeItem("user")
+            fetch("http://localhost:4500/users/register", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then(res => res.json())
+                .then((data) => {
+                    console.log(data)
+                    info.textContent = "Successfully registered!"
+                    setTimeout(() => {
+                        window.location.href = "./user_fronend/login.html"
+                    }, 1500);
+                })
+
+                .catch(err => console.log(err))
+        }else{
+            info.textContent = "Please fill all fields!"
+        }
+
     }
 </script>

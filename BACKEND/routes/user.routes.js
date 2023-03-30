@@ -29,7 +29,7 @@ userRouter.post("/login",async(req,res)=>{
             bcrypt.compare(password,user[0].password,(err,result)=>{
                 if(result){
                     let token=jwt.sign({userID:user[0]._id},"masai")
-                    res.send({"msg":"User logged in sucessfull","token":token})
+                    res.send({"msg":"User logged in sucessfull","token":token,"user":user[0].name})
                 }else{
                     res.send({"msg":"No User Found"})
                 }

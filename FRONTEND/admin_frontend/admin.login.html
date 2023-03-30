@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin login</title>
+    <style>
+        #login{
+            width: 380px;
+            box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+             
+            /* background-color: rgb(222, 243, 242); */
+            background-color: transparent;
+            /* background-image: url("../gradient.jpg"); */
+            border-radius: 10px;
+            margin: auto;
+            padding: 2%;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10%;
+        }
+        #username,#password{
+            display: block;
+        }
+        body{
+            background-color: rgb(204, 201, 201);
+            background-image: url("../gradient.jpg");
+        }
+        #head_1{
+            font-family: 'Aclonica';font-size: 50px;
+            color: #f82452;
+            text-align: center;
+        }
+        #button{
+            display:flex;
+            justify-content: space-between;
+        }
+        #button>button{
+            border-radius: 10px;
+            background-color: rgb(84, 1, 161);
+        }
+        #button>button>a{
+            color: rgb(245, 245, 245);
+        }
+        input{
+            background-color: beige;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="head_1">Welcome To Administration</h1>
+    <div id="button">
+        <button><a href="../signup.html">User signup</a></button>
+        <button><a href="../user_fronend/login.html">User Login</a></button>
+    </div>
+    <div id="login">
+        <h2 id="info">Please enter the correct details</h2>
+        <form action="submit" id="form">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter the admin username" id="username" name="username">
+            <label for="password">Password</label>
+            <input type="text" placeholder="Enter the admin password" id="password" name="password">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    let form=document.getElementById("form")
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const payload={
+            name:document.getElementById("username").value,
+            password:document.getElementById("password").value
+        }
+        if(payload.name=="Admin" && payload.password=="Admin"){
+            document.getElementById("info").textContent="Successfully logged in"
+            setTimeout(() => {
+                window.location.href="Create_products.html"
+            }, 1000);
+        }else{
+            document.getElementById("info").textContent="Wrong Credentials"
+        }
+    })
+</script>
