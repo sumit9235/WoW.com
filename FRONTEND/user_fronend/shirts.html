@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirts page</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        #parent {
+            height: auto;
+            width: 100%;
+            border: 1px solid black;
+
+        }
+
+        #navbar {
+            width: 100%;
+            height: 160px;
+            border: 0px solid black;
+            position: fixed;
+        }
+
+        #upperdiv {
+            height: 15%;
+            border: 1px solid gray;
+            display: flex;
+            gap: 155px;
+            align-items: center;
+            padding-left: 3%;
+            justify-content: space-between;
+            padding-right: 2%;
+            background-color: rgb(225, 218, 218);
+        }
+
+        #upperdiv>div>p {
+            font-weight: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #upperdiv>div {
+            width: auto;
+            height: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        #lowerdiv {
+            height: 40%;
+            border: 1px solid gray;
+            border-top: 0px;
+            display: flex;
+            gap: 50px;
+            background-color: white;
+        }
+
+        #bottomdiv {
+            height: 30%;
+            border: 1px solid black;
+            border-top: 0px;
+            border-bottom: 0px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        #logo {
+            width: auto;
+            height: auto;
+            align-items: center;
+        }
+
+        #logo>img {
+            height: 95%;
+            width: 200px;
+            margin-top: 2px;
+        }
+
+        #items {
+            height: auto;
+            width: auto;
+            border: 0px solid black;
+            display: flex;
+            gap: 30px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            align-items: center;
+        }
+
+        #searchbar {
+            height: 100%;
+            margin-left: 10%;
+            align-items: center;
+        }
+
+        #searchbar>input {
+            height: 40px;
+            width: 280px;
+            margin-top: 4%;
+            background-color: rgb(255, 236, 236);
+            color: rgb(223, 196, 196);
+            border: 0px solid gray;
+            border-radius: 5px;
+            border: 0px;
+            color: rgb(83, 83, 83);
+        }
+
+        #rightdiv {
+            height: auto;
+            width: auto;
+            border: 0px solid black;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        #rightdiv>img {
+            width: 30px;
+            height: 50%;
+        }
+
+        #rightdiv>p {
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        #profile {
+            height: 30px;
+            width: 120px;
+            border: 1px solid black;
+            border-radius: 10px;
+            align-items: center;
+            text-align: center;
+            /* justify-content: center; */
+        }
+    </style>
+    <style>
+        #container {
+            margin-top: 3cm;
+            text-align: center;
+        }
+
+        #banner {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #heading {
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 2%;
+        }
+
+        #display {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #display>div {
+            height: 400px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #display>div>img {
+            width: 250px;
+            height: 250px;
+        }
+
+        #display>div>button {
+            padding: 8px;
+            color: red;
+            border-radius: 5px;
+            margin-top: 1%;
+        }
+
+        #display>div>button:hover {
+            background-color: teal;
+            color: white;
+        }
+
+        @media only screen and (min-width: 451px) and (max-width: 900px) {
+            #display {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #banner{
+                flex-direction: column;
+            }
+
+        }
+
+        @media only screen and (min-width: 10px) and (max-width: 450px) {
+            #display {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            #banner{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="parent">
+            <div id="navbar">
+                <div id="upperdiv">
+                    <div>
+                        <p>Offers</p>
+                        <p>Fanbook</p>
+                        <p>Download App</p>
+                        <p>TriBe Membership</p>
+                    </div>
+                    <div>
+                        <p>Contact Us</p>
+                        <p>Track Order</p>
+                    </div>
+                </div>
+                <div id="lowerdiv">
+                    <div id="logo">
+                        <img src="./wow.png.png" alt="logo" id="home">
+                    </div>
+                    <div id="items">
+                        <p><a href="./shoes.html">Shoes</a></p>
+                        <p><a href="./shirts.html">Shirts</a></p>
+                        <p><a href="./jeans.html">Jeans</a></p>
+                        <p><a href="./general.html">General</a></p>
+                    </div>
+                    <div id="searchbar">
+                        <input type="text" id="search" placeholder="Search By Product,category or collection">
+                    </div>
+                    <div id="rightdiv">
+                        <div style="border: 1px solid gray; height: 50%;"></div>
+                        <p><a href="./login.html">Login</a></p>
+                        <img src="https://img.icons8.com/external-inkubators-detailed-outline-inkubators/1x/external-log-out-ecommerce-user-interface-inkubators-detailed-outline-inkubators.png"
+                            alt="loveitem" id="logout">
+                        <img src="https://img.icons8.com/dotty/1x/shopping-cart.png" alt="cart">
+                        <span id="cart_count">0</span>
+                        <div id="profile">
+                            <p id="user">Please login</p>
+                        </div>
+                    </div>
+                </div>
+    </nav>
+    <div id="container">
+        <h1 id="heading">Shirts Section</h1>
+        <br>
+        <div id="banner">
+            <img src="https://img.freepik.com/premium-vector/fashion-style-banner_565202-68.jpg"
+                alt="">
+            <img src="https://img.freepik.com/free-psd/woman-holding-leafy-white-pillow-mockup_53876-115776.jpg" alt="">
+        </div>
+        <br>
+        <div id="sort_filter">
+            <br>
+            <label for="sort">Sorting:</label>
+            <select name="sort" id="sort">
+                <option value="L2H">Low To High</option>
+                <option value="H2L">High To Low</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <div id="display">
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let container = document.getElementById("display")
+    let bag = []
+    const getData = () => {
+        fetch("http://localhost:4500/products/", {
+            method: "GET"
+        }).then(res => res.json())
+            .then((data) => {
+                let filtered_data = data.filter((elem) => {
+                    return elem.category == "shirts"
+                })
+                bag = filtered_data;
+                console.log(filtered_data)
+                displayData(filtered_data)
+            })
+            .catch(err => console.log(err))
+    }
+    getData()
+
+    function displayData(data) {
+        container.innerHTML = null
+        data.forEach(function (elem, id) {
+            let image = document.createElement("img")
+            image.setAttribute("src", elem.image)
+            let div = document.createElement("div")
+            let h3 = document.createElement("h3")
+            h3.textContent = elem.name
+            let p = document.createElement("p")
+            p.textContent = elem.category
+            let cost = document.createElement("p")
+            cost.textContent = `₹ ${elem.price}`
+            let add = document.createElement("button")
+            add.textContent = "Add to cart"
+            add.addEventListener("click", () => {
+                let BuyList = JSON.parse(localStorage.getItem("cart-item")) || [];
+                let token = localStorage.getItem("token")
+                if (token) {
+                    let alreadyincart = false;
+                    for (let i = 0; i < BuyList.length; i++) {
+                        if (BuyList[i].name === elem.name) {
+                            alreadyincart = true;
+                            break;
+                        }
+                    }
+                    if (alreadyincart) {
+                        alert("Already in cart");
+                    } else {
+                        BuyList.push(elem);
+                        localStorage.setItem("cart-item", JSON.stringify(BuyList));
+                        alert("Added in cart");
+                        displayData(bag)
+                    }
+                } else {
+                    alert("Please login first")
+                }
+
+            })
+            let Carts = JSON.parse(localStorage.getItem("cart-item")) || [];
+            document.getElementById("cart_count").textContent = Carts.length
+            div.append(image, h3, p, cost, add)
+            container.append(div)
+        });
+    }
+</script>
+
+<script>
+    let user = localStorage.getItem("user")
+    if (user) {
+        document.getElementById("user").textContent = user
+    }
+    document.querySelector("#logout").addEventListener("click", () => {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setTimeout(() => {
+            window.location.href = "./login.html"
+        }, 1000);
+    })
+
+    document.getElementById("sort").addEventListener("change", () => {
+        let val=document.getElementById("sort").value
+        if(val=="L2H"){
+            let sorted=bag.sort((a,b)=>{
+                return a.price-b.price
+            })
+        }else if(val=="H2L"){
+            let sorted=bag.sort((a,b)=>{
+                return b.price-a.price
+            })
+        }
+        displayData(bag);
+    })
+
+    document.getElementById("home").addEventListener("click",()=>{
+        setTimeout(() => {
+            window.location.href="./homepage.html"
+        }, 200);
+    })
+</script>

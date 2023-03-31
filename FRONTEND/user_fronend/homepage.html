@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>My Website</title>
     <style>
@@ -66,18 +65,118 @@
         #logout {
             border-radius: 5px;
         }
-        .alert{
-            text-align: center;
+
+        .alert {
+            text-align: left;
             font-family: Arial, Helvetica, sans-serif;
         }
-        #item_1{
+
+        #item_1 {
             display: flex;
             justify-content: space-evenly;
         }
-        #item_1>img{
+
+        #item_1>img {
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
 
+        #red_block {
+            background-color: #460610;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .red_block_1 {
+            text-align: left;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            padding: 10px;
+        }
+
+        .red_block_2 {
+            padding: 17px;
+        }
+
+        .red_block_2>button {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #460610;
+            font-size: larger;
+        }
+
+        .red_block_2>button:hover {
+            background-color: rgb(5, 49, 5);
+        }
+
+        #items_2 {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #items_2>div {
+            transition: transform 0.3s;
+        }
+
+        #items_2>div:hover {
+            transform: scale(1.1);
+        }
+
+        #banner {
+            display: flex;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: left;
+        }
+
+        #banner>div:nth-child(1) {
+            width: 30%;
+            margin-left: 10px;
+        }
+
+        #banner>div:nth-child(1)>button {
+            padding: 10px;
+            color: black;
+            background-color: transparent;
+            margin-left: 30px;
+            font-size: larger;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #banner>div:nth-child(1)>button:hover {
+            background-color: green;
+            color: white;
+        }
+
+        #banner>div:nth-child(2) {
+            width: 70%;
+            border: 1 px solid blue;
+        }
+
+        #banner>div:nth-child(2)>img {
+            width: 940px;
+        }
+
+        #line {
+            border: 0.2px solid grey;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-evenly;
+            color: #767676;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer button>img {
+            width: 60px;
+            height: 30px;
+        }
+
+        #footer button {
+            margin-left: 10px;
+        }
     </style>
     <style>
         * {
@@ -179,7 +278,7 @@
             height: 40px;
             width: 280px;
             margin-top: 4%;
-            background-color: rgb(255, 236, 236);
+            background-color: rgb(236, 255, 255);
             color: rgb(223, 196, 196);
             border: 0px solid gray;
             border-radius: 5px;
@@ -236,13 +335,13 @@
             </div>
             <div id="lowerdiv">
                 <div id="logo">
-                    <img src="./wow.png.png" alt="logo">
+                    <img src="./wow.png.png" alt="logo" id="home">
                 </div>
                 <div id="items">
-                    <p><a href="">Shoes</a></p>
-                    <p><a href="">Shirts</a></p>
-                    <p><a href="">Jeans</a></p>
-                    <p><a href="">General</a></p>
+                    <p><a href="./shoes.html">Shoes</a></p>
+                    <p><a href="./shirts.html">Shirts</a></p>
+                    <p><a href="./jeans.html">Jeans</a></p>
+                    <p><a href="./general.html">General</a></p>
                 </div>
                 <div id="searchbar">
                     <input type="text" id="search" placeholder="Search By Product,category or collection">
@@ -270,7 +369,7 @@
             </div>
             <br>
             <br>
-            <h1 class="alert">Daily Deals Products</h1>
+            <h1 class="alert"><u>Daily Deals Products</u></h1>
             <br>
             <br>
             <div id="item_1">
@@ -280,6 +379,145 @@
                 <img src="https://i.ebayimg.com/images/g/llgAAOSwWzddaXEW/s-l225.webp" alt="">
                 <img src="https://i.ebayimg.com/images/g/nAIAAOSwsBtaDeZL/s-l225.webp" alt="">
             </div>
+            <div id="red_block">
+                <div class="red_block_1">
+                    <h1>Have you been selling on WoW already?</h1>
+                    <h4>To pay your fees or ask questions..</h4>
+                </div>
+                <div class="red_block_2">
+                    <button>Read More --></button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h1 class="alert"> <u>Popular Destination | See all </u></h1>
+            <br>
+            <br>
+            <div id="items_2">
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/FVIAAOSwFURcG8vK/s-l200.webp" alt="">
+                </div>
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/gE4AAOSwgnJcG8vI/s-l200.webp" alt="">
+                </div>
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/kEwAAOSwnZJcG8vM/s-l200.webp" alt="">
+                </div>
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/MyIAAOSwsrlcG8vM/s-l200.webp" alt="">
+                </div>
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/WREAAOSwh7tcG8vJ/s-l200.webp" alt="">
+                </div>
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/hIgAAOSwyTtcJkbp/s-l200.webp" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="banner">
+                <div>
+                    <br>
+                    <h1>Citizen Upto 30% off</h1>
+                    <br>
+                    <br>
+                    <p>From top seller to your wrist</p>
+                    <br>
+                    <button>Shop now --></button>
+                </div>
+                <div>
+                    <img src="https://i.ebayimg.com/images/g/wIgAAOSwUf9kHXHG/s-l960.webp" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="line">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="footer">
+                <div>
+                    <h3>Buy</h3>
+                    <br>
+                    <p>Registration</p>
+                    <br>
+                    <p>WoW moneyback guarantee</p>
+                    <br>
+                    <p>Bidding & Buying help</p>
+                    <br>
+                    <p>Stores</p>
+                </div>
+                <div>
+                    <h3>Sell</h3>
+                    <br>
+                    <p>Start selling</p>
+                    <br>
+                    <p>Love to sell</p>
+                    <br>
+                    <p>Affiliates</p>
+                    <br>
+                    <p>Stores</p>
+                    <br>
+                    <p>Tools & app</p>
+                    <br>
+                    <p>Developers</p>
+                    <br>
+                    <p>Site map</p>
+                </div>
+                <div>
+                    <h3>Stay connected</h3>
+                    <br>
+                    <p>WoW's Blog</p>
+                    <br>
+                    <p>Facebook</p>
+                    <br>
+                    <p>Twitter</p>
+                </div>
+                <div>
+                    <h3>About WoW</h3>
+                    <br>
+                    <p>Company info's</p>
+                    <br>
+                    <p>News</p>
+                    <br>
+                    <p>Reports</p>
+                    <br>
+                    <p>Investor</p>
+                    <br>
+                    <p>Career</p>
+                    <br>
+                    <p>Government relation</p>
+                    <br>
+                    <p>Advertise with us</p>
+                    <br>
+                    <p>Policies</p>
+                    <br>
+                    <p>Verified Rights Owner (VeRO) Program</p>
+                </div>
+                <div>
+                    <h3>Help & Contact</h3>
+                    <br>
+                    <p>Seller information Center</p>
+                    <br>
+                    <p>Contact us</p>
+                    <br>
+                    <h3>Community</h3>
+                    <br>
+                    <p>Announcement</p>
+                    <br>
+                    <p>Disscussion Boards</p>
+                    <br>
+                    <p>WoW's Giving Works</p>
+                    <br>
+                    <h3>WoW's Sites</h3>
+                    <br>
+                    <button><img src="https://cdn-icons-png.flaticon.com/128/6211/6211446.png" alt=""></button>
+                </div>
+            </div>
+            <!-- <a href="./homepage.html"></a> -->
 </body>
 
 </html>
@@ -320,6 +558,12 @@
         setTimeout(() => {
             window.location.href = "./login.html"
         }, 1000);
+    })
+
+    document.getElementById("home").addEventListener("click",()=>{
+        setTimeout(() => {
+            window.location.href="./homepage.html"
+        }, 200);
     })
 
 </script>
