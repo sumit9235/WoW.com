@@ -116,9 +116,12 @@
                     localStorage.setItem("user",res.user)
                     localStorage.setItem("token", res.token)
                     document.getElementById("form").reset()
-                    setTimeout(() => {
+                    if(res.token){
+                        setTimeout(() => {
                         window.location.href="../user_fronend/homepage.html"
                     }, 1500);
+                    } 
+                    // console.log(res.status)
                 })
                 .catch(err => console.log(err))
         }
