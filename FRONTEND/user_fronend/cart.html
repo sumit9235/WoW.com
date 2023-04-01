@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoes page</title>
+    <title>Cart page</title>
     <style>
         * {
             padding: 0%;
@@ -161,48 +161,109 @@
             margin-left: 2%;
         }
 
-        #display {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        #cart_item_display {
+            width: 55%;
+            /* border: 1px solid red; */
         }
 
-        #display>div {
-            height: 400px;
+        #cart_item_display {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 20px;
+            height: auto;
+        }
+
+        #cart_item_display>div>img {
+            width: 100px;
+            height: 50%;
+        }
+
+        #cart_item_display>div {
+            width: 200px;
+        }
+
+        #cart_price_display {
+            width: 30%;
+            border-left: 2px solid rgb(0, 0, 3);
+            height: auto;
+            row-gap: 10px;
+            column-gap: 20px;
+            padding-left: 20px;
+        }
+
+        #cart_price_display>h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #cart_price_display>h4 {
+            color: grey;
+        }
+
+        #coupon_info {
+            color: teal;
+        }
+
+        #display {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .cart_count {
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        #display>div>img {
-            width: 250px;
-            height: 250px;
-        }
-
-        #display>div>button {
-            padding: 8px;
+        #total {
             color: red;
-            border-radius: 5px;
-            margin-top: 1%;
+            border: 1px solid green;
+            font-size: 25px;
         }
 
-        #display>div>button:hover {
-            background-color: teal;
+        #Buy_Now {
+            padding: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: x-large;
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+
+        #Buy_Now:hover {
+            background-color: black;
             color: white;
         }
 
+        #line {
+            border: 0.2px solid grey;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-evenly;
+            color: #767676;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer button>img {
+            width: 60px;
+            height: 30px;
+        }
+
+        #footer button {
+            margin-left: 10px;
+        }
+
+
         @media only screen and (min-width: 451px) and (max-width: 900px) {
-            #display {
+            #cart_item_display {
                 grid-template-columns: repeat(2, 1fr);
             }
-            #banner{
-                flex-direction: column;
-            }
-
         }
 
         @media only screen and (min-width: 10px) and (max-width: 450px) {
-            #display {
+            #cart_item_display {
                 grid-template-columns: repeat(1, 1fr);
             }
-            #banner{
+
+            #footer {
                 flex-direction: column;
             }
         }
@@ -244,7 +305,6 @@
                         <img src="https://img.icons8.com/external-inkubators-detailed-outline-inkubators/1x/external-log-out-ecommerce-user-interface-inkubators-detailed-outline-inkubators.png"
                             alt="loveitem" id="logout">
                         <img src="https://img.icons8.com/dotty/1x/shopping-cart.png" alt="cart" id="cart_page">
-                        <span id="cart_count">0</span>
                         <div id="profile">
                             <p id="user">Please login</p>
                         </div>
@@ -252,13 +312,7 @@
                 </div>
     </nav>
     <div id="container">
-        <h1 id="heading">Footwear Section</h1>
-        <br>
-        <div id="banner">
-            <img src="https://img.freepik.com/free-vector/modern-black-friday-sale-banner-template-with-3d-background-red-splash_1361-1877.jpg"
-                alt="">
-            <img src="https://img.freepik.com/free-psd/banner-running-shoes-template_23-2148681439.jpg" alt="">
-        </div>
+        <h1 id="heading">Cart Section</h1>
         <br>
         <div id="sort_filter">
             <br>
@@ -269,77 +323,189 @@
             </select>
         </div>
         <br>
-        <br>
         <div id="display">
+            <div id="cart_item_display">
 
+            </div>
+            <div id="cart_price_display">
+                <h1><u>Products in cart:- <span class="cart_count">0</span></u></h1>
+                <br>
+                <br>
+                <h4>Total cost of products:- <span id="total">0</span></h4>
+                <br>
+                <br>
+                <h2 id="coupon_info">Apply coupon "WELCOME"</h2>
+                <br>
+                <P>To get 20% off on your first purchase</P>
+                <br>
+                <form action="submit" id="coupon">
+                    <input type="text" placeholder="Enter coupon code" id="coupon_code">
+                    <input type="submit">
+                </form>
+                <br>
+                <br>
+                <br>
+                <button id="Buy_Now">Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="line">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="footer">
+        <div>
+            <h3>Buy</h3>
+            <br>
+            <p>Registration</p>
+            <br>
+            <p>WoW moneyback guarantee</p>
+            <br>
+            <p>Bidding & Buying help</p>
+            <br>
+            <p>Stores</p>
+        </div>
+        <div>
+            <h3>Sell</h3>
+            <br>
+            <p>Start selling</p>
+            <br>
+            <p>Love to sell</p>
+            <br>
+            <p>Affiliates</p>
+            <br>
+            <p>Stores</p>
+            <br>
+            <p>Tools & app</p>
+            <br>
+            <p>Developers</p>
+            <br>
+            <p>Site map</p>
+        </div>
+        <div>
+            <h3>Stay connected</h3>
+            <br>
+            <p>WoW's Blog</p>
+            <br>
+            <p>Facebook</p>
+            <br>
+            <p>Twitter</p>
+        </div>
+        <div>
+            <h3>About WoW</h3>
+            <br>
+            <p>Company info's</p>
+            <br>
+            <p>News</p>
+            <br>
+            <p>Reports</p>
+            <br>
+            <p>Investor</p>
+            <br>
+            <p>Career</p>
+            <br>
+            <p>Government relation</p>
+            <br>
+            <p>Advertise with us</p>
+            <br>
+            <p>Policies</p>
+            <br>
+            <p>Verified Rights Owner (VeRO) Program</p>
+        </div>
+        <div>
+            <h3>Help & Contact</h3>
+            <br>
+            <p>Seller information Center</p>
+            <br>
+            <p>Contact us</p>
+            <br>
+            <h3>Community</h3>
+            <br>
+            <p>Announcement</p>
+            <br>
+            <p>Disscussion Boards</p>
+            <br>
+            <p>WoW's Giving Works</p>
+            <br>
+            <h3>WoW's Sites</h3>
+            <br>
+            <button><img src="https://cdn-icons-png.flaticon.com/128/6211/6211446.png" alt=""></button>
         </div>
     </div>
+
 </body>
 
 </html>
 <script>
-    let container = document.getElementById("display")
-    let bag = []
-    const getData = () => {
-        fetch("http://localhost:4500/products/", {
-            method: "GET"
-        }).then(res => res.json())
-            .then((data) => {
-                let filtered_data = data.filter((elem) => {
-                    return elem.category == "shoes"
-                })
-                bag = filtered_data;
-                console.log(filtered_data)
-                displayData(filtered_data)
-            })
-            .catch(err => console.log(err))
-    }
-    getData()
-
+    let Price;
+    let Cart_items = JSON.parse(localStorage.getItem("cart-item")) || []
+    let display = document.getElementById("cart_item_display")
+    let total = document.querySelector("#total");
+    displayData(Cart_items)
     function displayData(data) {
-        container.innerHTML = null
+        display.innerHTML = null
         data.forEach(function (elem, id) {
             let image = document.createElement("img")
             image.setAttribute("src", elem.image)
             let div = document.createElement("div")
             let h3 = document.createElement("h3")
             h3.textContent = elem.name
-            let p = document.createElement("p")
-            p.textContent = elem.category
             let cost = document.createElement("p")
             cost.textContent = `₹ ${elem.price}`
-            let add = document.createElement("button")
-            add.textContent = "Add to cart"
-            add.addEventListener("click", () => {
-                let BuyList = JSON.parse(localStorage.getItem("cart-item")) || [];
-                let token = localStorage.getItem("token")
-                if (token) {
-                    let alreadyincart = false;
-                    for (let i = 0; i < BuyList.length; i++) {
-                        if (BuyList[i].name === elem.name) {
-                            alreadyincart = true;
-                            break;
-                        }
-                    }
-                    if (alreadyincart) {
-                        alert("Already in cart");
-                    } else {
-                        BuyList.push(elem);
-                        localStorage.setItem("cart-item", JSON.stringify(BuyList));
-                        alert("Added in cart");
-                        displayData(bag)
-                    }
-                } else {
-                    alert("Please login first")
-                }
+            let remove = document.createElement("button")
+            remove.textContent = "remove"
+            remove.addEventListener("click", () => {
+                Cart_items.splice(id, 1);
+                localStorage.setItem("cart-item", JSON.stringify(Cart_items));
+                displayData(Cart_items)
 
             })
-            let Carts = JSON.parse(localStorage.getItem("cart-item")) || [];
-            document.getElementById("cart_count").textContent = Carts.length
-            div.append(image, h3, p, cost, add)
-            container.append(div)
+            div.append(image, h3, cost, remove)
+            display.append(div)
         });
+        let Carts = JSON.parse(localStorage.getItem("cart-item")) || [];
+        if (Carts[0] == undefined) {
+            document.querySelector(".cart_count").textContent = "0"
+        } else {
+            document.querySelector(".cart_count").textContent = Carts.length
+        }
+
+
+        Price = Cart_items.reduce((acc, el) => acc + (Number(el.price)), 0);
+        console.log(Math.floor(Price))
+        document.querySelector("#total").innerText = "₹ " + Price;
     }
+    let coupon = document.querySelector("#coupon")
+    coupon.addEventListener("submit", (e) => {
+        e.preventDefault()
+        let code = document.getElementById("coupon_code").value;
+        if (code == "WELCOME") {
+            let Price_after_coupon = (Price * 20) / 100;
+            document.querySelector("#total").innerText = `₹ ${Price - Price_after_coupon}`
+            document.querySelector("#coupon_info").textContent = "Coupon applied Successfully"
+        } else {
+            document.querySelector("#coupon_info").textContent = "Coupon not valid"
+        }
+    })
+    document.querySelector("#Buy_Now").addEventListener("click", () => {
+        let token = localStorage.getItem("token");
+        let cartItems = JSON.parse(localStorage.getItem("cart-item")) || [];
+
+        if (!token) {
+            alert("Please login first");
+        } else if (cartItems.length === 0) {
+            alert("Please add some items to proceed");
+        } else {
+            setTimeout(() => {
+                window.location.href = "./checkout.html";
+            }, 500);
+        }
+    });
 </script>
 
 <script>
@@ -356,29 +522,30 @@
     })
 
     document.getElementById("sort").addEventListener("change", () => {
-        let val=document.getElementById("sort").value
-        if(val=="L2H"){
-            let sorted=bag.sort((a,b)=>{
-                return a.price-b.price
+        let val = document.getElementById("sort").value
+        if (val == "L2H") {
+            let sorted = Cart_items.sort((a, b) => {
+                return a.price - b.price
             })
-        }else if(val=="H2L"){
-            let sorted=bag.sort((a,b)=>{
-                return b.price-a.price
+        } else if (val == "H2L") {
+            let sorted = Cart_items.sort((a, b) => {
+                return b.price - a.price
             })
         }
-        displayData(bag);
+        displayData(Cart_items);
     })
 
-    document.getElementById("home").addEventListener("click",()=>{
+    document.getElementById("home").addEventListener("click", () => {
         setTimeout(() => {
-            window.location.href="./homepage.html"
+            window.location.href = "./homepage.html"
         }, 200);
     })
-    
-    document.querySelector("#cart_page").addEventListener("click",()=>{
+
+    document.querySelector("#cart_page").addEventListener("click", () => {
         setTimeout(() => {
-            window.location.href="./cart.html"
+            window.location.href = "./cart.html"
         }, 500);
     })
-    
+
+
 </script>

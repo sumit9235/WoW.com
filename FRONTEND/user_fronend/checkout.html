@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout page</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        #parent {
+            height: auto;
+            width: 100%;
+            border: 1px solid black;
+
+        }
+
+        #navbar {
+            width: 100%;
+            height: 160px;
+            border: 0px solid black;
+            position: fixed;
+        }
+
+        #upperdiv {
+            height: 15%;
+            border: 1px solid gray;
+            display: flex;
+            gap: 155px;
+            align-items: center;
+            padding-left: 3%;
+            justify-content: space-between;
+            padding-right: 2%;
+            background-color: rgb(225, 218, 218);
+        }
+
+        #upperdiv>div>p {
+            font-weight: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #upperdiv>div {
+            width: auto;
+            height: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        #lowerdiv {
+            height: 40%;
+            border: 1px solid gray;
+            border-top: 0px;
+            display: flex;
+            gap: 50px;
+            background-color: white;
+        }
+
+        #bottomdiv {
+            height: 30%;
+            border: 1px solid black;
+            border-top: 0px;
+            border-bottom: 0px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        #logo {
+            width: auto;
+            height: auto;
+            align-items: center;
+        }
+
+        #logo>img {
+            height: 95%;
+            width: 200px;
+            margin-top: 2px;
+        }
+
+        #items {
+            height: auto;
+            width: auto;
+            border: 0px solid black;
+            display: flex;
+            gap: 30px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            align-items: center;
+        }
+
+        #searchbar {
+            height: 100%;
+            margin-left: 10%;
+            align-items: center;
+        }
+
+        #search {
+            height: 40px;
+            width: 280px;
+            margin-top: 4%;
+            background-color: rgb(255, 236, 236);
+            color: rgb(223, 196, 196);
+            border: 0px solid gray;
+            border-radius: 5px;
+            border: 0px;
+            color: rgb(83, 83, 83);
+        }
+
+        #rightdiv {
+            height: auto;
+            width: auto;
+            border: 0px solid black;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        #rightdiv>img {
+            width: 30px;
+            height: 50%;
+        }
+
+        #rightdiv>p {
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        #profile {
+            height: 30px;
+            width: 120px;
+            border: 1px solid black;
+            border-radius: 10px;
+            align-items: center;
+            text-align: center;
+            /* justify-content: center; */
+        }
+    </style>
+    <style>
+        #container {
+            margin-top: 5cm;
+        }
+        #container>h1{
+            text-align: center;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        #line {
+            border: 0.2px solid grey;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-evenly;
+            color: #767676;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #footer button>img {
+            width: 60px;
+            height: 30px;
+        }
+
+        #footer button {
+            margin-left: 10px;
+        }
+
+
+        @media only screen and (min-width: 10px) and (max-width: 450px) {
+            #footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <style>
+        form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            color: #555;
+            background-color: #f9f9f9;
+        }
+
+        .form-input:focus {
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="parent">
+            <div id="navbar">
+                <div id="upperdiv">
+                    <div>
+                        <p>Offers</p>
+                        <p>Fanbook</p>
+                        <p>Download App</p>
+                        <p>TriBe Membership</p>
+                    </div>
+                    <div>
+                        <p>Contact Us</p>
+                        <p>Track Order</p>
+                    </div>
+                </div>
+                <div id="lowerdiv">
+                    <div id="logo">
+                        <img src="./wow.png.png" alt="logo" id="home">
+                    </div>
+                    <div id="items">
+                        <p><a href="./shoes.html">Shoes</a></p>
+                        <p><a href="./shirts.html">Shirts</a></p>
+                        <p><a href="./jeans.html">Jeans</a></p>
+                        <p><a href="./general.html">General</a></p>
+                    </div>
+                    <div id="searchbar">
+                        <input type="text" id="search" placeholder="Search By Product,category or collection">
+                    </div>
+                    <div id="rightdiv">
+                        <div style="border: 1px solid gray; height: 50%;"></div>
+                        <p><a href="./login.html">Login</a></p>
+                        <img src="https://img.icons8.com/external-inkubators-detailed-outline-inkubators/1x/external-log-out-ecommerce-user-interface-inkubators-detailed-outline-inkubators.png"
+                            alt="loveitem" id="logout">
+                        <img src="https://img.icons8.com/dotty/1x/shopping-cart.png" alt="cart" id="cart_page">
+                        <div id="profile">
+                            <p id="user">Please login</p>
+                        </div>
+                    </div>
+                </div>
+    </nav>
+    <div id="container">
+        <h1><u>Please fill the shipping details</u></h1>
+        <br>
+        <br>
+        <br>
+        <form>
+            <h2>Please fill the form correctly</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Pincode:</label>
+                <input type="text" id="zipcode" name="zipcode" required class="form-input">
+            </div>
+            <button type="submit" class="form-button">Submit</button>
+        </form>
+    </div>
+    <br>
+
+    <div id="line">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="footer">
+        <div>
+            <h3>Buy</h3>
+            <br>
+            <p>Registration</p>
+            <br>
+            <p>WoW moneyback guarantee</p>
+            <br>
+            <p>Bidding & Buying help</p>
+            <br>
+            <p>Stores</p>
+        </div>
+        <div>
+            <h3>Sell</h3>
+            <br>
+            <p>Start selling</p>
+            <br>
+            <p>Love to sell</p>
+            <br>
+            <p>Affiliates</p>
+            <br>
+            <p>Stores</p>
+            <br>
+            <p>Tools & app</p>
+            <br>
+            <p>Developers</p>
+            <br>
+            <p>Site map</p>
+        </div>
+        <div>
+            <h3>Stay connected</h3>
+            <br>
+            <p>WoW's Blog</p>
+            <br>
+            <p>Facebook</p>
+            <br>
+            <p>Twitter</p>
+        </div>
+        <div>
+            <h3>About WoW</h3>
+            <br>
+            <p>Company info's</p>
+            <br>
+            <p>News</p>
+            <br>
+            <p>Reports</p>
+            <br>
+            <p>Investor</p>
+            <br>
+            <p>Career</p>
+            <br>
+            <p>Government relation</p>
+            <br>
+            <p>Advertise with us</p>
+            <br>
+            <p>Policies</p>
+            <br>
+            <p>Verified Rights Owner (VeRO) Program</p>
+        </div>
+        <div>
+            <h3>Help & Contact</h3>
+            <br>
+            <p>Seller information Center</p>
+            <br>
+            <p>Contact us</p>
+            <br>
+            <h3>Community</h3>
+            <br>
+            <p>Announcement</p>
+            <br>
+            <p>Disscussion Boards</p>
+            <br>
+            <p>WoW's Giving Works</p>
+            <br>
+            <h3>WoW's Sites</h3>
+            <br>
+            <button><img src="https://cdn-icons-png.flaticon.com/128/6211/6211446.png" alt=""></button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.querySelector(".form-button").addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    let name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let phone = document.querySelector("#phone").value;
+    let address = document.querySelector("#address").value;
+    let city = document.querySelector("#city").value;
+    let zipcode = document.querySelector("#zipcode").value;
+
+    if (name && email && phone && address && city && zipcode) {
+        setTimeout(() => {
+            window.location.href="./finalpage.html"
+        }, 1000);
+    } else {
+        alert("Please fill the form correctly");
+    }
+});
+</script>
+
+<script>
+    let user = localStorage.getItem("user")
+    if (user) {
+        document.getElementById("user").textContent = user
+    }
+    document.querySelector("#logout").addEventListener("click", () => {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setTimeout(() => {
+            window.location.href = "./login.html"
+        }, 1000);
+    })
+
+
+    document.getElementById("home").addEventListener("click", () => {
+        setTimeout(() => {
+            window.location.href = "./homepage.html"
+        }, 200);
+    })
+
+    document.querySelector("#cart_page").addEventListener("click", () => {
+        setTimeout(() => {
+            window.location.href = "./cart.html"
+        }, 500);
+    })
+
+
+</script>
