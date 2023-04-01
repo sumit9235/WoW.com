@@ -351,7 +351,7 @@
                     <p><a href="./login.html">Login</a></p>
                     <img src="https://img.icons8.com/external-inkubators-detailed-outline-inkubators/1x/external-log-out-ecommerce-user-interface-inkubators-detailed-outline-inkubators.png"
                         alt="loveitem" id="logout">
-                    <img src="https://img.icons8.com/dotty/1x/shopping-cart.png" alt="cart">
+                    <img src="https://img.icons8.com/dotty/1x/shopping-cart.png" alt="cart" id="cart_page">
                     <div id="profile">
                         <p id="user">Please login</p>
                     </div>
@@ -566,4 +566,9 @@
         }, 200);
     })
 
+    document.querySelector("#cart_page").addEventListener("click",()=>{
+        setTimeout(() => {
+            window.location.href="./cart.html"
+        }, 500);
+    })
 </script>
