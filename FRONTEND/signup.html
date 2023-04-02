@@ -114,7 +114,7 @@
             console.log(payload)
             localStorage.removeItem("token")
             localStorage.removeItem("user")
-            fetch("http://localhost:4500/users/register", {
+            fetch("https://cheerful-jersey-fawn.cyclic.app/users/register", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

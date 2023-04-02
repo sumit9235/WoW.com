@@ -145,6 +145,12 @@
         }
     </style>
     <style>
+         #items>p>a{
+            color: teal;
+        }
+        #items>p>a:hover{
+            color: red;
+        }
         #container {
             margin-top: 3cm;
             text-align: center;
@@ -186,6 +192,11 @@
         #display>div>button:hover {
             background-color: teal;
             color: white;
+        }
+        #user{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: teal;
+            font-size: larger;
         }
 
         @media only screen and (min-width: 451px) and (max-width: 900px) {
@@ -281,7 +292,7 @@
     let container = document.getElementById("display")
     let bag = []
     const getData = () => {
-        fetch("http://localhost:4500/products/", {
+        fetch("https://cheerful-jersey-fawn.cyclic.app/products/", {
             method: "GET"
         }).then(res => res.json())
             .then((data) => {
