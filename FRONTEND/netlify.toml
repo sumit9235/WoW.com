@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "./user_fronend/homepage.html"
+  status = 200

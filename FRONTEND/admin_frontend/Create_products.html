@@ -147,7 +147,7 @@
             payload.image = image;
             payload.price = price;
             payload.category = category;
-            fetch("http://localhost:4500/products/create", {
+            fetch("https://cheerful-jersey-fawn.cyclic.app/products/create", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -175,7 +175,7 @@
     const productId = document.getElementById("Patch_id").value;
     const data=document.getElementById("data").value;
     const category=document.getElementById("category_p").value;
-    const url = `http://localhost:4500/products/patch/${productId}`;
+    const url = `https://cheerful-jersey-fawn.cyclic.app/products/patch/${productId}`;
     if(productId && data && category){
        body[category]= data
          fetch(url, {
@@ -203,7 +203,7 @@
     let  container=document.querySelector("#display")
     let bag=[]
     const getData=()=>{
-        fetch("http://localhost:4500/products/",{
+        fetch("https://cheerful-jersey-fawn.cyclic.app/products/",{
             method:"GET"
         }).then(res=>res.json())
         .then(data=>{
@@ -239,7 +239,7 @@
         })
     }
     function deletedata(id){
-        fetch(`http://localhost:4500/products/delete/${id}`,{
+        fetch(`https://cheerful-jersey-fawn.cyclic.app/products/delete/${id}`,{
             method:"DELETE"
         }).then(res=>res.json())
         .then(data=>{
