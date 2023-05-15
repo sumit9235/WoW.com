@@ -1,5 +1,6 @@
- 💻Unique Project Name & logo :- WoW.com -  ![App Screenshot]https://github.com/sumit9235/tacky-ball-3034/blob/main/FRONTEND/wow.png.png
+ 💻Unique Project Name & logo :- Buget Buddy -  ![App Screenshot](https://i.postimg.cc/GtfLQrkD/Budget-Bud.png)
 ---
+
 This is a real-time budget application that allows users to track their expenses and income in real-time. It is designed to be easy to use and provides users with an intuitive interface for managing their finances.This is a collaborative Project from Masai School in the Construct Week With the 5 team members within 5 Days.
 ---
 
