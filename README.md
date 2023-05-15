@@ -1,46 +1,14 @@
- 💻Unique Project Name & logo :- Buget Buddy -  ![App Screenshot](https://i.postimg.cc/GtfLQrkD/Budget-Bud.png)
+ 💻Unique Project Name & logo :- WoW.com -  ![App Screenshot](https://i.postimg.cc/GtfLQrkD/Budget-Bud.png)
 ---
 
-This is a real-time budget application that allows users to track their expenses and income in real-time. It is designed to be easy to use and provides users with an intuitive interface for managing their finances.This is a collaborative Project from Masai School in the Construct Week With the 5 team members within 5 Days.
----
-
-
-## ✨Collaboraters Names Are :-
-
-1. Konark Chandra Kumar(Team Lead)
-   >    - e-Mail: konarkkumar456@gmail.com
-   >    - GitHub: https://github.com/Konark-2ez
-
-
-2. Manideep Peddaboini
-   >    - e-Mail: peddaboinimanideep03@gmail.com
-   >    - GitHub: https://github.com/Manideep-0164 
-
-
-3. Sumit Kumar Yadav
-   >    - e-Mail: sy7985494155@gmail.com
-   >    - GitHub: https://github.com/sumit9235
-
-
-4. Shashwat Mahendra
-   >    - e-Mail: shashwatmahender2104@gmail.com
-   >    - GitHub: https://github.com/Shashwat2104 
-
-
-5. Abdul Haseeb T K
-   >    - e-Mail:  haseebshs@gmail.com
-   >    - GitHub: https://github.com/haseeb1233 
-
-
-
-
+WoW.com is an e-commerce website designed using HTML, CSS and JavaScript. The server is built using NodeJs, ExpressJs and the database is made using MongoDB. It is a clone of Ebay.com  and designed to be easy to use and provides users with an intuitive interface for purchasing products.This is an individual Project from Masai School in the Construct Week and able to compleate within 5 Days.
 ---
 
 ## 💫Tech Stack
 
-**Client:** HTML | CSS | Javascript | Bootsrap | External CSS library
+**Client:** HTML | CSS | Javascript | External CSS library
 
-**Server:** Node.js | Express.js | MongoDB | WebRTC | PeerJS library | Socket.io | Bcrypt | PassPort | cors | Redis | JWT
+**Server:** Node.js | Express.js | MongoDB | Bcrypt | cors | Redis | JWT
 
 **github:** To maintain repository and collabration and version control.
 
@@ -54,13 +22,13 @@ This is a real-time budget application that allows users to track their expenses
 
 - Home page
 - Login/Signup
-- Dashboard
-- Google OAuth 
-- Github OAuth
+- Product sections
+- Cart section
+- Admin section
 
 ## Backend Part
 - Authentication using JWT
-- implementation using Socket.io
+- Bcryting password
 - Node.js
 - Express.js
 
@@ -72,20 +40,19 @@ This is a real-time budget application that allows users to track their expenses
 ---
 ## Features ✨
 
-- HomePage , Dashboard  , Navbar, Footer
+- HomePage , Admin page  , Navbar, Footer
 
-- Real-time expense and income tracking
+- Adding in cart , Sorting , Filtering
 
 - Intuitive and easy-to-use interface
+
 - Cart Page
 
-- Budget tracking and analysis
+- Authentication, Authorization
 
 - Secure user authentication and data encryption
 
 - Sign Up , Login 
-
-- Multi-currency support
 
 ---
 ## Screenshots 📷
@@ -107,17 +74,22 @@ This is a real-time budget application that allows users to track their expenses
 
 ![App Screenshot](https://i.postimg.cc/Jn31PS01/Screenshot-648.png)
 
-# Dashboard 
+# Products page
 
-![App Screenshot](https://i.postimg.cc/cLMhtJ7r/Screenshot-2023-05-13-113305.png)
+![App Screenshot](https://i.postimg.cc/gJhfDhM8/Screenshot-529.png)
+![App Screenshot](https://i.postimg.cc/Y09Q76Jm/Screenshot-649.png)
+![App Screenshot](https://i.postimg.cc/GpKBpBPP/Screenshot-650.png)
+![App Screenshot](https://i.postimg.cc/hjhGP2tg/Screenshot-651.png)
 
 
 
-# Crypto
+# Admin page
 
-![App Screenshot](https://i.postimg.cc/0NDV5QzW/Screenshot-2023-05-13-113033.png)
+![App Screenshot](https://i.postimg.cc/MKszPh0D/Screenshot-652.png)
 
-![App Screenshot](https://i.postimg.cc/gJf8T9yC/Screenshot-2023-05-13-113401.png)
+![App Screenshot](https://i.postimg.cc/k5S95G01/Screenshot-653.png)
+
+![App Screenshot](https://i.postimg.cc/kGJdwcBz/Screenshot-654.png)
 
 
 
@@ -125,7 +97,7 @@ This is a real-time budget application that allows users to track their expenses
 ---
 
 ---
-⭐Deployed Link:- https://beautiful-bonbon-06d31f.netlify.app/index.html
+⭐Deployed Link:- https://sage-biscotti-b2b0b5.netlify.app/
 
 
 ----
