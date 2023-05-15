@@ -93,19 +93,19 @@ This is a real-time budget application that allows users to track their expenses
 
 # HomePage
 
-![App Screenshot](https://postimg.cc/w1sCyRyq)
+![App Screenshot](https://i.postimg.cc/DwCnNq7X/Screenshot-528.png)
 
-![App Screenshot](https://postimg.cc/pyFzS2F9)
+![App Screenshot](https://i.postimg.cc/zDd7VvDk/Screenshot-644.png)
 
-![App Screenshot](https://postimg.cc/87t6vcqY)
+![App Screenshot](https://i.postimg.cc/hGqbH7MK/Screenshot-645.png)
 
 
 
 # Signup | Login
 
-![App Screenshot](https://i.postimg.cc/nV4fSFT1/Screenshot-2023-05-13-113112.png)
+![App Screenshot](https://i.postimg.cc/15vzxxHX/Screenshot-647.png)
 
-![App Screenshot](https://i.postimg.cc/7YZt1wRh/Screenshot-2023-05-13-113132.png)
+![App Screenshot](https://i.postimg.cc/Jn31PS01/Screenshot-648.png)
 
 # Dashboard 
 
