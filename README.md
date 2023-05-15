@@ -1,4 +1,4 @@
- 💻Unique Project Name & logo :- WoW.com -  ![App Screenshot](https://i.postimg.cc/GtfLQrkD/Budget-Bud.png)
+ 💻Unique Project Name & logo :- WoW.com -  ![App Screenshot](https://i.postimg.cc/d0VHWxB8/wow-png.png)
 ---
 
 WoW.com is an e-commerce website designed using HTML, CSS and JavaScript. The server is built using NodeJs, ExpressJs and the database is made using MongoDB. It is a clone of Ebay.com  and designed to be easy to use and provides users with an intuitive interface for purchasing products.This is an individual Project from Masai School in the Construct Week and able to compleate within 5 Days.
